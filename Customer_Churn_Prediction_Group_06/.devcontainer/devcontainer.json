@@ -1,11 +1,14 @@
 {
   "name": "ML Practical Environment",
+  "build":{
+    "dockerfile": "../dockerfile",
+    "context": ".."
+  },
   "image": "ubuntu:22.04",
   "runArgs": [
     "--privileged",
     "--network=host"
   ],
-  "postCreateCommand": "./scripts/setup-env.sh",
   "customizations": {
     "vscode": {
       "extensions": [
