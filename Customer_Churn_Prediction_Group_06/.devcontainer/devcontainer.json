@@ -1,11 +1,12 @@
 {
   "name": "ML Practical Environment",
-  "image": "ubuntu:22.04",
+  "build": {
+    "dockerfile": "../dockerfile",
+    "context": ".."
+  },
   "runArgs": [
-    "--privileged",
-    "--network=host"
+    "--privileged"
   ],
-  "postCreateCommand": "./scripts/setup-env.sh",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -18,5 +19,6 @@
     }
   },
   "forwardPorts": [8888],
+  "postStartCommand": "jupyter lab --ip=0.0.0.0 --no-browser --allow-root",
   "remoteUser": "root"
 }

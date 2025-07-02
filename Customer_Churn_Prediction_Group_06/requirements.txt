@@ -1,5 +1,7 @@
 numpy
 pandas
+tqdm
+scipy
 scikit-learn
 matplotlib
 seaborn
@@ -7,3 +9,6 @@ jupyterlab
 notebook
 ipykernel
 xgboost
+lightgbm
+imbalanced-learn
+
