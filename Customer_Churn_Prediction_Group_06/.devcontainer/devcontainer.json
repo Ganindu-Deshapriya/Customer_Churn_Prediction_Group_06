@@ -1,0 +1,24 @@
+{
+  "name": "ML Practical Environment",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": ".."
+  },
+  "runArgs": [
+    "--privileged"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "eamodio.gitlens",
+        "ms-toolsai.jupyter",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode-remote.remote-containers"
+      ]
+    }
+  },
+  "forwardPorts": [8888],
+  "postStartCommand": "jupyter lab --ip=0.0.0.0 --no-browser --allow-root",
+  "remoteUser": "root"
+}
