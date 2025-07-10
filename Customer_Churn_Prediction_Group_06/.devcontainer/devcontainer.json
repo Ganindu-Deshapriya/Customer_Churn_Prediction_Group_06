@@ -19,6 +19,7 @@
     }
   },
   "forwardPorts": [8888],
-  "postStartCommand": "jupyter lab --ip=0.0.0.0 --no-browser --allow-root",
+  //"postStartCommand": "jupyter lab --ip=0.0.0.0 --no-browser --allow-root",
+  "postStartCommand": "nohup jupyter lab --ip=0.0.0.0 --no-browser --allow-root > /tmp/jupyter.log 2>&1 &",
   "remoteUser": "root"
 }
