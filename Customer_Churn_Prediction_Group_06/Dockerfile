@@ -2,6 +2,12 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
+# Update package lists and install curl, gnupg (needed for Node.js setup)
+RUN apt-get update && apt-get install -y curl gnupg \
+ && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+ && apt-get install -y nodejs
+
+
 # Install system-level dependencies
 RUN apt-get update && apt-get install -y \
     git \
