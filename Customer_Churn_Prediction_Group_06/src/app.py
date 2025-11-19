@@ -8,7 +8,7 @@ import pandas as pd
 MODEL_DIR = os.path.join(os.path.dirname(__file__), "models")
 DATASET_PATH = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "dataset", "churn_data.csv"))
 
-MODEL_CANDIDATES = ["xgb_churn_model.pkl", "churn_adaboost_model.pkl", "svm_churn_model.pkl"]
+MODEL_CANDIDATES = ["xgb_churn_model.pkl", "churn_adaboost_model.pkl", "SVM_model.pkl"]
 LABEL_ENCODERS_FILE = "label_encoders.pkl"
 
 # ---------------- UI STYLES ----------------
@@ -214,8 +214,6 @@ def render_model_card(model_name, model_obj):
     if classes is not None:
         st.sidebar.markdown(f"<div class='meta'>Classes: {', '.join(map(str, list(classes)[:8]))}</div>", unsafe_allow_html=True)
     st.sidebar.markdown("</div>", unsafe_allow_html=True)
-    if st.sidebar.button("Reload models"):
-        st.experimental_rerun()
 
 def render_dataset_preview(dataset_path):
     if os.path.exists(dataset_path):
